@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
         respone.cookies.set("token", token, {
             httpOnly: true
         })
-        return respone
+        return respone;
 
 
     } catch (error: any) {

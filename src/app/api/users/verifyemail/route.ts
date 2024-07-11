@@ -12,7 +12,7 @@ export async function POST(req: NextRequest){
         console.log(token);
 
         //asume token returned
-        const user = await User.findOne({verifyYoken: token, verifyTokenExpiry: {$gt: Date.now()}})
+        const user = await User.findOne({verifyToken: token, verifyTokenExpiry: {$gt: Date.now()}})
         
         if (!user){
             return NextResponse.json({error: "Invaild token"}, {status: 400})
